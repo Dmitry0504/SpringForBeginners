@@ -10,4 +10,7 @@
     <bean id = "myPet"
         class = "org.example.Cat"/>
 
+    <bean id = ""
+          class = "org.example.Cat"/>
+
 </beans>
