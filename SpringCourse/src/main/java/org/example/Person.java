@@ -1,6 +1,8 @@
 package org.example;
 
 public class Person {
+    private String surname;
+    private int age;
     private Pet pet;
 
     public Person() {
@@ -12,6 +14,14 @@ public class Person {
         this.pet = pet;
     }
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void setPet(Pet pet) {
         System.out.println("set pet");
         this.pet = pet;
@@ -20,5 +30,21 @@ public class Person {
     public void callYourPet() {
         System.out.println("Hello, my lovely pet!");
         pet.say();
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "surname='" + surname + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
