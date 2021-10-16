@@ -10,6 +10,8 @@
 
     <bean id = "myPet"
         class = "org.example.Dog"
+        init-method="init"
+        destroy-method="destroy"
         scope="prototype"/>
 
 
