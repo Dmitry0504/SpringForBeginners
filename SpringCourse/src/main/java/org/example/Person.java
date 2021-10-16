@@ -1,18 +1,24 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private String surname;
     private int age;
+    @Autowired
     private Pet pet;
 
     public Person() {
         System.out.println("Empty constructor");
     }
 
-    public Person(Pet pet) {
-        System.out.println("Person bean is created");
-        this.pet = pet;
-    }
+//    @Autowired
+//    public Person(Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -21,7 +27,7 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-
+//    @Autowired
     public void setPet(Pet pet) {
         System.out.println("set pet");
         this.pet = pet;
