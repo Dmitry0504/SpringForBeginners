@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 // то он создаст его автоматически, это будет имя класса с маленькой буквы
 // если имя класса начинается с двух заглавных букв то id будет просто названием класса
 // например SQLTest -> SQLTest
-@Component("catBean")
+//@Component("catBean")
 public class Cat implements Pet {
 
     public Cat() {

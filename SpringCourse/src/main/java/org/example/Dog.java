@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 public class Dog implements Pet {
 //    private String name;
 //
@@ -18,12 +18,12 @@ public class Dog implements Pet {
 //        this.name = name;
 //    }
 
-    @PostConstruct
+//    @PostConstruct
     protected void init() {
         System.out.println("Class dog initialization");
     }
 
-    @PreDestroy
+//    @PreDestroy
     private void destroy() {
         System.out.println("Class dog destroy");
     }
