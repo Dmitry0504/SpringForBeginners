@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Value("${person.surname}")
+//    @Value("${person.surname}")
     private String surname;
-    @Value("${person.age}")
+//    @Value("${person.age}")
     private int age;
 //    @Autowired
 //    @Qualifier("catBean")
