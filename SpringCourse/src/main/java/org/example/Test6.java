@@ -13,6 +13,8 @@ public class Test6 {
         Person person =  context.getBean("personBean", Person.class);
         person.callYourPet();
 
+        System.out.println(person);
+
         context.close();
     }
 }
