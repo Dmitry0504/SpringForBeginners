@@ -3,25 +3,27 @@ package aop.aspects;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(10)
+public class LoggingAspect {
 
-    @Pointcut("execution(* aop.UniLibrary.*(..))")
-    private void allMethodsFromUniLibrary() {}
-
-    @Pointcut("execution(public void aop.UniLibrary.returnMagazine())")
-    private void returnMagazineFromUniLibrary() {}
-
-    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
-    private void allMethodsExceptReturnMagazineFromUniLibrary() {}
-
-    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
-    public void beforeAllMethodsExceptReturnMagazineAdvice() {
-        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: writing Log #10");
-    }
+//    @Pointcut("execution(* aop.UniLibrary.*(..))")
+//    private void allMethodsFromUniLibrary() {}
+//
+//    @Pointcut("execution(public void aop.UniLibrary.returnMagazine())")
+//    private void returnMagazineFromUniLibrary() {}
+//
+//    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+//    private void allMethodsExceptReturnMagazineFromUniLibrary() {}
+//
+//    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+//    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+//        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: writing Log #10");
+//    }
 
 
 //    @Pointcut("execution(* aop.UniLibrary.get*())")
@@ -51,17 +53,11 @@ public class LoggingAndSecurityAspect {
 //    }
 
 
-//    @Pointcut("execution(* get*())")
-//    private void allGetMethods() {}
-//
-//    @Before("allGetMethods()")
-//    public void beforeGetLoggingAdvice() {
-//        System.out.println("beforeGetBookAdvice: пытаемся получить книгу/журнал");
-//    }
-//
-//    @Before("allGetMethods()")
-//    public void beforeGetSecurityAdvice() {
-//        System.out.println("beforeGetSecurityAdvice проверка прав на получение книги/журнала");
-//    }
+
+    @Before("aop.aspects.MyPointcuts.allGetMethods()")
+    public void beforeGetLoggingAdvice() {
+        System.out.println("beforeGetBookAdvice: логгирование попытки получить книгу/журнал");
+    }
+
 
 }
