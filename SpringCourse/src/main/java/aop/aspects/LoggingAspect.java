@@ -80,7 +80,7 @@ public class LoggingAspect {
                     System.out.println("Книгу в библиотеку добавляет " + obj);
             }
         }
-        
+
         System.out.println("beforeGetBookAdvice: логгирование попытки добавить книгу/журнал");
         System.out.println("-------------------------------");
     }
