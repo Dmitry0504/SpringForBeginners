@@ -1,10 +1,7 @@
 package aop.aspects;
 
 import aop.Student;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,7 +12,7 @@ public class UniversityLoggingAspect {
 
 //    @Before("execution(* getStudents())")
 //    public void beforeGetStudentsLoggingAdvice() {
-//        System.out.println("beforeGetStudentsLoggingAdvice: логгируем получение списка студентов " +
+//        System.out.println("beforeGetStudentsLoggingAdvice: логируем получение списка студентов " +
 //                "перед методом getStudents");
 //    }
 //
@@ -29,13 +26,19 @@ public class UniversityLoggingAspect {
 //
 //        firstStudent.setAverageGrade(firstStudent.getAverageGrade() + 0.2);
 //
-//        System.out.println("afterReturningGetStudentsLoggingAdvice: логгируем получение списка студентов " +
+//        System.out.println("afterReturningGetStudentsLoggingAdvice: логируем получение списка студентов " +
 //                "после работы метода getStudents");
 //    }
 
-    @AfterThrowing(pointcut = "execution(* getStudents())",
-            throwing = "exception")
-    public void afterThrowingGetStudentsLoggingAdvice(Throwable exception) {
-        System.out.println("afterThrowingGetStudentsLoggingAdvice: логгируем выброс исключения " + exception);
+//    @AfterThrowing(pointcut = "execution(* getStudents())",
+//            throwing = "exception")
+//    public void afterThrowingGetStudentsLoggingAdvice(Throwable exception) {
+//        System.out.println("afterThrowingGetStudentsLoggingAdvice: логируем выброс исключения " + exception);
+//    }
+
+    @After("execution(* getStudents())")
+    public void afterGetStudentsLoggingAdvice() {
+        System.out.println("afterGetStudentsLoggingAdvice логируем нормальное окончание работы метода " +
+                "или выброс исключения");
     }
 }
