@@ -73,6 +73,14 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Detail getEmpDetail() {
+        return empDetail;
+    }
+
+    public void setEmpDetail(Detail empDetail) {
+        this.empDetail = empDetail;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -81,6 +89,7 @@ public class Employee {
                 ", surname='" + surname + '\'' +
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
+                ", empDetail=" + empDetail +
                 '}';
     }
 }
