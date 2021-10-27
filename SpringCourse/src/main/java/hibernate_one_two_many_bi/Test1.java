@@ -1,7 +1,7 @@
-package hibernate_test2;
+package hibernate_one_two_many_bi;
 
-import hibernate_test2.entity.Detail;
-import hibernate_test2.entity.Employee;
+import hibernate_one_two_many_bi.entity.Department;
+import hibernate_one_two_many_bi.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,55 +11,61 @@ public class Test1 {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Detail.class)
+                .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
 
         Session session = null;
 
         try {
-//            Session session = factory.getCurrentSession();
+//            session = factory.getCurrentSession();
 //
-//            Employee employee = new Employee("Ivan", "Ivanov", "IT", 500);
-//            Detail detail = new Detail("Gorkiy", "1234000", "ivan@mail.ru");
-//            employee.setEmpDetail(detail);
+//            Department department = new Department("IT", 300, 1200);
+//            Employee employee1 = new Employee("Ivan", "Ivanov", 500);
+//            Employee employee2 = new Employee("Petr", "Petrov", 650);
 //
-//            session.beginTransaction();
-//
-//            session.save(employee);
-//
-//            session.getTransaction().commit();
-//
-//            System.out.println("Done!");
-
-
-//            Session session = factory.getCurrentSession();
-//
-//            Employee employee = new Employee("Oleg", "Smirnov", "Sales", 700);
-//            Detail detail = new Detail("Moscow", "1332523000", "oleg@mail.ru");
-//            employee.setEmpDetail(detail);
+//            department.addEmployeeToDepartment(employee1);
+//            department.addEmployeeToDepartment(employee2);
 //
 //            session.beginTransaction();
 //
-//            session.save(employee);
+//            session.save(department);
 //
 //            session.getTransaction().commit();
 //
 //            System.out.println("Done!");
 
 //            session = factory.getCurrentSession();
+//
 //            session.beginTransaction();
 //
-//            Employee employee = session.get(Employee.class, 10);
-//            System.out.println(employee.getEmpDetail());
+//            Department department = session.get(Department.class, 1);
+//            System.out.println(department.getEmps());
+//
 //            session.getTransaction().commit();
 //
 //            System.out.println("Done!");
 
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//
+//            Employee employee = session.get(Employee.class, 1);
+//
+//            System.out.println(employee);
+//            System.out.println(employee.getDepartment());
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("Done!");
+//            ********************************************************88
             session = factory.getCurrentSession();
+
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 2);
+            Employee employee = session.get(Employee.class, 4);
+
             session.delete(employee);
+
             session.getTransaction().commit();
 
             System.out.println("Done!");

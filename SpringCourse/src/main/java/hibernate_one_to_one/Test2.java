@@ -1,7 +1,7 @@
-package hibernate_test2;
+package hibernate_one_to_one;
 
-import hibernate_test2.entity.Detail;
-import hibernate_test2.entity.Employee;
+import hibernate_one_to_one.entity.Detail;
+import hibernate_one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -31,7 +31,7 @@ public class Test2 {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            
+
             Detail detail = session.get(Detail.class, 1);
             detail.getEmployee().setEmpDetail(null);
             session.delete(detail);
