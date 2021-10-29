@@ -13,7 +13,7 @@ public class Section {
     private int id;
     @Column(name = "name")
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(
             name = "child_section"
             , joinColumns = @JoinColumn (name = "section_id")
