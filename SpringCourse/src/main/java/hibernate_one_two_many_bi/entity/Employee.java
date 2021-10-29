@@ -1,8 +1,5 @@
 package hibernate_one_two_many_bi.entity;
 
-import hibernate_one_to_one.entity.Detail;
-import org.hibernate.engine.internal.Cascade;
-
 import javax.persistence.*;
 
 @Entity
