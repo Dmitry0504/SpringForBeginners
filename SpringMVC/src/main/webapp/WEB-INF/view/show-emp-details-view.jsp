@@ -15,7 +15,7 @@
 <br>
 <%--Your name: ${param.employeeName}--%>
 
-Your name: ${nameAttribute}, description - ${description}
+Your name: ${nameAttribute}
 <br>
 <a href="askDetails">Ask details</a>
 </form>
