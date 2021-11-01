@@ -32,7 +32,7 @@ public class MyController {
         String name = employee.getName();
         employee.setName("Mr. " + name);
         String surname = employee.getSurname();
-        employee.setSurname("!");
+        employee.setSurname(surname + "!");
         int salary = employee.getSalary();
         employee.setSalary(salary * 10);
         return "show-emp-details-view";
