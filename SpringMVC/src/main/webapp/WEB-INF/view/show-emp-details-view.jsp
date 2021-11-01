@@ -23,6 +23,8 @@ Your salary: ${employee.salary}
 <br><br>
 Your department: ${employee.department}
 <br><br>
+Your car: ${employee.carBrand}
+<br><br>
 <a href="askDetails">Ask details</a>
 </form>
 </body>
