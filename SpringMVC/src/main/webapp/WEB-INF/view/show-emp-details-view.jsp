@@ -29,6 +29,5 @@ Language(s):
 </ul>
 <br>
 <a href="askDetails">Ask details</a>
-</form>
 </body>
 </html>
