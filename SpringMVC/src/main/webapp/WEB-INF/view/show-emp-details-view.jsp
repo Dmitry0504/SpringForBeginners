@@ -27,6 +27,8 @@ Language(s):
         <li>${lang}</li>
     </c:forEach>
 </ul>
+<br><br>
+Your phone number: ${employee.phoneNumber}
 <br>
 <a href="askDetails">Ask details</a>
 </body>
