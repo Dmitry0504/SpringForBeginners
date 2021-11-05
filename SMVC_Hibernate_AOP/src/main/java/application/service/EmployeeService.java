@@ -1,9 +1,10 @@
-package application.dao;
+package application.service;
 
 import application.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
+
     List<Employee> getAllEmployees();
 }
