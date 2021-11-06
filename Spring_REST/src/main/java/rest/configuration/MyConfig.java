@@ -14,7 +14,7 @@ import java.beans.PropertyVetoException;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan("rest")
+@ComponentScan(basePackages = "rest")
 @EnableWebMvc
 @EnableTransactionManagement
 public class MyConfig {
@@ -23,8 +23,8 @@ public class MyConfig {
     public DataSource dataSource() {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         try {
-            comboPooledDataSource.setDriverClass("com.mysql.crj.jdbc.Driver");
-            comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/my_db?useSSL=false&amp;serverTimezone=UTC");
+            comboPooledDataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+            comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/my_db?useSSL=false&amp&serverTimezone=UTC");
             comboPooledDataSource.setUser("bestuser");
             comboPooledDataSource.setPassword("bestuser");
         } catch (PropertyVetoException e) {
