@@ -21,7 +21,7 @@ public class App {
 
 //        Employee employee = new Employee("Sveta", "Sokolova", "IT", 1200);
 //        employee.setId(8);
-        
+
         communication.deleteEmployee(8);
 
 
